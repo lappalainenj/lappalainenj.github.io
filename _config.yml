@@ -20,7 +20,7 @@ resume: true
 resume-external: true
 resume-url: assets/files/CV_Janne_Lappalainen_web.pdf
 
-url: https://lappalainenjk.github.io
+url: https://lappalainenj.github.io
 # your url: https://USERNAME.github.io
 
 permalink: /:title/
