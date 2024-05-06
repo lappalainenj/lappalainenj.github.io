@@ -41,6 +41,7 @@ layout: compress
 
 </head>
 <body>
+    <div id="particles-js"></div>
     <div class="wrapper-{% if site.width == "normal" %}normal{% elsif site.width == "large" %}large{% endif %}">
         {% if page.layout == "post" %}
             <div class="post">
@@ -57,5 +58,11 @@ layout: compress
                 </div>
             </div>
     </div>
+    <script src="../scripts/particles.js"></script>
+    <script>
+        particlesJS.load('particles-js', '../scripts/particlesjs-config.json', function() {
+            console.log('callback - particles.js config loaded');
+        });
+    </script>
 </body>
 </html>
