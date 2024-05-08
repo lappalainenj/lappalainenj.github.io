@@ -4,6 +4,8 @@
     text-align: center
     position: relative
     z-index: 99
+    // border: 2px solid red // just for debugging
+    width: 65%
 
     > .link > .selfie
         width: 125px
@@ -18,11 +20,11 @@
             opacity: .8
 
     > .title
-        font-size: 4rem
+        font-size: 3.5rem
         margin: 0 0 13px
 
     > .description
-        font-size: 1.85rem
+        font-size: 2.25rem
         font-weight: $thin-font
         font-style: normal
         color: $gama
@@ -31,4 +33,21 @@
 
         // if you put some links in your bio. ;)
         a
-            font-weight: 200
+            color: inherit
+            text-decoration: none
+
+    > .affiliation
+        font-size: 2.25rem
+        font-weight: $thin-font
+        font-style: normal
+        color: $gama
+        width: 100%
+        margin: 0 auto 0 // 30px
+
+        // if you put some links in your bio. ;)
+        a
+            color: inherit
+            text-decoration: none
+
+        &:hover
+            color: $delta

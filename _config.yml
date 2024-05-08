@@ -1,9 +1,9 @@
 # main text of home
 title: Janne Kristian Lappalainen
-bio: PhD Student, Machine Learning in Science, University Tübingen.
+bio: <a href='https://www.mackelab.org/'>Machine Learning in Science, University of Tübingen</a>
 
 # twitter summary info
-description: A blog about my (academic) life
+# description:  
 
 # if it's an external image, update below for true
 # better with square images
@@ -17,6 +17,7 @@ dark-theme: auto
 # If you want to include your resume, set to true
 # and specify source (external or local).
 resume: true
+resume-nav: false
 resume-external: true
 resume-url: assets/files/CV_Janne_Lappalainen_web.pdf
 

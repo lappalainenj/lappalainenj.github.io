@@ -17,22 +17,8 @@
         {% endif %}
 
         <h1 class="title">{{ site.title }}</h1>
-        <h2 class="description">{{ site.bio }}</h2>
-        <p class="description">
-            Hi, thanks for visiting. I am currently a doctoral candidate in
-            Machine Learning in Science, aka Mackelab, led by Prof. Jakob Macke
-            at the University of Tübingen. We use deep learning for modeling neural
-            circuits to increase our understanding of stimulus-evoked neural
-            computation and behavior in intelligent systems. Working with Dr.
-            Srinivas Turaga and other scientists from HHMI Janelia Research Campus,
-            we incorporate realistic biophysical constraints and knowledge of the
-            actual connectivity into our neural circuit models and compare
-            representations in models to data measured in the biological systems.
-            In particular, we derive connectome-constrained models of the Drosophila
-            visual system, which learn to recognize movement in naturalistic
-            movie sequences, for example.
-        </p>
-
+        <h2 class="affiliation">{{ site.bio }}</h2>
+        <p class="description"></p>
         {% include social-links.html %}
     </header>
 {% endif %}
