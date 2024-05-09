@@ -67,7 +67,7 @@ layout: compress
     <script src="../scripts/particles.js"></script>
     <script>
         var randomNumber = Math.floor(Math.random() * 100) + 1;
-        var configPath = randomNumber <= 10 ? '../scripts/particlesjs-config_random_color.json' : '../scripts/particlesjs-config.json';
+        var configPath = randomNumber <= 50 ? '../scripts/particlesjs-config_random_color.json' : '../scripts/particlesjs-config.json';
     
         particlesJS.load('particles-js', configPath, function() {
             console.log('callback - particles.js config loaded from ' + configPath);
