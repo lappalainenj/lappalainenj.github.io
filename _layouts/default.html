@@ -1,0 +1,77 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {% if site.analytics-google %}
+        {% include analytics-google.html %}
+    {% endif %}
+
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta name=author content="{{ site.title }}">
+
+    {% seo %}
+    <meta property="og:title" content="{{ page.title | default: site.title }}">
+    <meta property="og:description" content="{{ page.description | default: site.description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:image" content="{% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}"> 
+
+    {% include favicon.html %}
+
+    <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}{{ "/feed.xml" }}" />
+
+    <script src="https://kit.fontawesome.com/e2d0ecb551.js" crossorigin="anonymous"></script>
+
+    <style>
+
+    {% if site.dark-theme == "auto" %}
+        {% capture scss_sheet %}
+            {% include style.scss %}
+            @media (prefers-color-scheme: dark) {
+                {% include style-dark.scss %}
+            }
+        {% endcapture %}
+    {% elsif site.dark-theme %}
+        {% capture scss_sheet %}{% include style-dark.scss %}{% endcapture %}
+    {% else %}
+        {% capture scss_sheet %}{% include style.scss %}{% endcapture %}
+    {% endif %}
+
+    {{ scss_sheet | scssify }}
+    </style>
+
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="wrapper-{% if site.width == "normal" %}normal{% elsif site.width == "large" %}large{% endif %}">
+        {% if page.layout == "post" %}
+            <div class="post">
+        {% else %}
+            {% if showHeader != true %}
+                <div class="page {{ page.title | downcase }}">
+            {% else %}
+                <div class="{{ page.title | downcase }}">
+            {% endif %}
+        {% endif %}
+
+            {{ content }}
+            </div>
+                </div>
+            </div>
+    </div>
+    <script src="../scripts/particles.js"></script>
+    <script>
+        var randomNumber = Math.floor(Math.random() * 100) + 1;
+        var configPath = randomNumber <= 50 ? '../scripts/particlesjs-config_random_color.json' : '../scripts/particlesjs-config.json';
+    
+        particlesJS.load('particles-js', configPath, function() {
+            console.log('callback - particles.js config loaded from ' + configPath);
+        });
+    </script>
+</body>
+</html>
